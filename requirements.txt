@@ -123,7 +123,7 @@ idna==3.3
 ImageHash==4.3.1
 inflection==0.5.1
 ipykernel==6.16.0
-ipython==8.5.0
+ipython==8.13.2
 ipython-genutils==0.2.0
 ipywidgets==7.7.1
 iso3166==2.1.1
