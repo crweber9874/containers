@@ -231,7 +231,7 @@ Pygments==2.13.0
 PyJWT==2.6.0
 PyMsgBox==1.0.9
 pyobjc==8.5
-pyobjc-core==8.5
+pyobjc-core ; sys_platform == "darwin"
 pyobjc-framework-Accessibility==8.5
 pyobjc-framework-Accounts==8.5
 pyobjc-framework-AddressBook==8.5
