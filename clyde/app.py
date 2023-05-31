@@ -1,6 +1,6 @@
 from flask import Flask, request, session
 from twilio.twiml.messaging_response import MessagingResponse
-from bot import ask, append_interaction_to_chat_log
+from clyde.bot import ask, append_interaction_to_chat_log
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "89dhjf9lhkd93"
