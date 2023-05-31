@@ -1,6 +1,6 @@
 from flask import Flask, request, session
 from twilio.twiml.messaging_response import MessagingResponse
-from jabebot import ask, append_interaction_to_chat_log
+from bot import ask, append_interaction_to_chat_log
 app = Flask(__name__)
 # if for some reason your conversation with Jabe gets weird, change the secret key
 app.config['SECRET_KEY'] = 'clyde'
