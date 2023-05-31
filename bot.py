@@ -16,7 +16,7 @@ session_prompt = "You are talking to Clyde, a GPT3 bot expert on Washington, D.C
 
 
 def ask(question, chat_log=None):
-    openai.api_key = api_key
+    openai.api_key ='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'
     prompt_text = f'{chat_log}{restart_sequence}: {question}{start_sequence}:'
     response = openai.Completion.create(engine="davinci",
     prompt=prompt_text,
