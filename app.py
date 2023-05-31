@@ -6,7 +6,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'clyde'
 
 @app.route('/bot', methods=['POST'])
-def jabe():
+def clyde():
     incoming_msg = request.values['Body']
     chat_log = session.get('chat_log')
     answer = ask(incoming_msg, chat_log)
