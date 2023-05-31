@@ -3,7 +3,7 @@ from twilio.twiml.messaging_response import MessagingResponse
 from bot import ask, append_interaction_to_chat_log
 app = Flask(__name__)
 # if for some reason your conversation with Jabe gets weird, change the secret key
-app.config['SECRET_KEY'] = 'clyde'
+app.config['SECRET_KEY'] = 'reset'
 
 @app.route('/bot', methods=['POST'])
 def clyde():
