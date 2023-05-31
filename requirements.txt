@@ -21,9 +21,9 @@ PyJWT
 python-dotenv
 pytz==2023.3
 requests
-setup-py-upgrade==1.3.0
-tqdm==4.65.0
-twilio==8.2.1
-urllib3==2.0.2
+setup-py-upgrade
+tqdm
+twilio
+urllib3
 Werkzeug
 yarl==1.9.2
