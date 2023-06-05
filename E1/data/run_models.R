@@ -1,6 +1,7 @@
 ##Load dependencies, packages, data, etc ##
 # More transformations and data recodes.....
 rm(list = ls())
+options(repr.plot.width=15, repr.plot.height=15)
 # Test install 
 #install.packages("brms")
 library(brms)
@@ -10,6 +11,7 @@ library(modelr)
 library(tidybayes)
 library(dplyr)
 library(cowplot)
+library(simplecolors)
 setwd("/home/a/workspace")
 load("pooled.auth.rda")
 ##### persistent ggtheme
@@ -35,23 +37,21 @@ fit1 <- brm(vote~ female + age + college + income + jewish +
                  data = tmp_dat, 
                  chains = 3, cores = 8, seed = 1234, 
                  iter = 1000)
-library(simplecolors)
 
 ## Expand the data used to estimate this model
 fixed_data = data[,c("vote", "authoritarianism", 
                  "female", "age", "college", "income",
                  "jewish", "catholic", "other", "year")] %>% na.omit() %>% 
                  mutate(authoritarianism_2 = authoritarianism*authoritarianism) %>%
-                group_by(year) %>% data_grid(female = mean(female), age = mean(age), 
+                 group_by(year) %>% data_grid(female = mean(female), age = mean(age), 
                                                       college = mean(college), income = mean(income), 
                                                       catholic =  mean(catholic), jewish = mean(jewish), 
                                                       other = mean(other), authoritarianism = seq_range(authoritarianism, n = 11))  %>% 
                                                       mutate(authoritarianism_2 = authoritarianism*authoritarianism)
                                                       
         
-m0 = fixed_data %>% add_linpred_draws(fit0b) %>%  mutate(Vote_Republican = plogis(.linpred))  ## Expand posterior
+m0 = fixed_data %>% add_linpred_draws(fit1) %>%  mutate(Vote_Republican = plogis(.linpred))  ## Expand posterior
 
-options(repr.plot.width=15, repr.plot.height=15)
 
 ## Plot linear Effects
  m0 %>% ggplot(aes(x = authoritarianism)) + facet_wrap(~year) + 
