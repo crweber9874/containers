@@ -13,3 +13,5 @@ There are three substantive files in this repository:
 
 Each folder contains a README.md file that further describes the environmnet.
 
+Do things change on the remote?
+
