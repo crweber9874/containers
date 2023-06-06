@@ -1,7 +1,7 @@
 FROM rocker/rstudio:latest
 
 #FROM rocker/rstudio-stable:3.3.1
-
+# A message 
 RUN apt-get clean all && \
     apt-get update && \
     apt-get upgrade -y && \
