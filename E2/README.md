@@ -6,4 +6,7 @@ docker run -it --rm -p 10000:8888 -v "${PWD}/data":/home/jovyan/work jupyter/dat
 
 Here, I map the current directory to the work directory in the container.
 
-A useful 
+#git pull --tags origin main
+#git commit 
+#git push origin main
+
