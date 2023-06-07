@@ -12,7 +12,7 @@ There are three substantive files in this repository:
 
 2) Producing a reproducible research environment with Docker. In this example, E2, I create a jupyter server. There again is a README.md that describes this example. I again use the code from the book, but it's useful to see how you can easily launch a containerized jupyter server.
 
-3) E3.  I use that Bayes ideal point estimation. I forked the repository...run everything. 
+3) E3.  I use that Bayes ideal point estimation....Fariss piece. I just dumped everything there....working on it. 
 
 4) Reproducible environments, and using Github actions with Docker to enhance collaboration. In the file '/Users/Chris/Dropbox/github_repos/containers_ps/.github/workflows/docker-publish.yml', this is an example of a Github action. What happens is this workflow is triggered whenever a commit is pushed to the repository. An image is then published on Docker Hub. This requires a docker hub account and github account, of course, but the environments are easily integrated. The yml file describes this workflow. I didn't build it, it's a recommendation in vscode, github. What happens then is one can use gitpod to launch a containerized environment. This is a very useful way to collaborate.  
 
