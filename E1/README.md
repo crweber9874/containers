@@ -1,12 +1,13 @@
-# Basic build codes
+# Example 1: RStan and Docker
 
-Docker hub is one location that hosts a lot of images. The Rockerverse group releases all sorts of useful rstudio and tidyverse builds. The code below pulls the image and builds the container. The -v tag binds everything in my local workspace to the container. I have to specify the platform component, as I'm using a Macbook Pro. -e denotes what users will need to enter as a username and password. The image as stored in docker hub is rocker/tidyverse. 
+This example builds a container image and launches that image. The image, is constructed from the dockerfile. The dockerfile is a set of instructions for building a container. It creates a docker image -- a set of read only files. The image can be executed as a container, a stripped down "virtual environment" that can be run across computational platforms, as its generally built upon a tiny linux environment.
+
+Docker Hub is one location that hosts a lot of images. The "Rockerverse" group releases useful rstudio and tidyverse builds. The code below pulls the image and builds the container. The -v tag binds everything in my local workspace to the container. I have to specify the platform component, as I'm using a Macbook Pro. -e denotes what users will need to enter as a username and password. The image as stored in docker hub is rocker/tidyverse. 
 
 Not all containers allow you to see the underlying code. So, I tend to rely on verified images and those with github repositories. In any case, here's the code to build a container with all the tidyverse dependencies and functions, in an rstudio environment. I bind a directory including all the files to run the analysis for Chapter 6 of my book,
 
 ``` 
 docker run  -v $(pwd):/home/rstudio/workspace -p 8787:8787 --platform linux/x86_64  -e USER=a -e PASSWORD=a rocker/tidyverse 
-
 docker run 
 ```
 
@@ -15,9 +16,7 @@ accesses the docker engine.
 ```
  $(pwd):/home/rstudio/workspace
 ```
-
-places the data in the current working directory in the container. With prebuilt images, it's important to locate the file directories, though it's alway possible to enter the container directly and add files.
-
+places the data in the current working directory in the container. With prebuilt images, it's important to locate the file directories, though it's alway possible to enter the container directly and add files. This kind of mount is called a bind mount - a file from the host is mounted to the container. This isn't always a great idea, for security reasons and because the mounted aren't ncessarily shared. This is contrasted to a volume mount, which is a shared filesystem. More information here can be found in E4.
 
 ```
 -p 8787:8787 --platform linux/x86_64  
