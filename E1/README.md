@@ -11,6 +11,9 @@ docker run  -v $(pwd):/home/rstudio/workspace -p 8787:8787 --platform linux/x86_
 docker run 
 ```
 
+docker run  -v $(pwd):/home/rstudio/workspace -p 80:8787 --platform linux/x86_64  -e USER=a -e PASSWORD=a rocker/tidyverse 
+
+
 accesses the docker engine. 
 
 ```

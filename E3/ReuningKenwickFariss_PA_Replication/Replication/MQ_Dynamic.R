@@ -14,7 +14,7 @@
 rm(list=ls())
 library(rstan)
 
-load("MAIN_MQ_Replication/mqData2015.Rda")
+load("/Users/Chris/Dropbox/github_repos/containers_ps/E3/ReuningKenwickFariss_PA_Replication/Replication/mqData2015.Rda")
 
 mqData$id <- as.numeric(as.factor(mqData$caseId))
 
@@ -30,11 +30,14 @@ for(jj in 1:45){
   dv <- append(dv, dv.tmp[!is.na(dv.tmp)])
 }
 
-
+# Justice term is an identifier, this is now creating a term id, and jt combos
 justice.term.id <- as.numeric(as.factor(justice.term))
 unique.jt <- levels(as.factor(justice.term))
 
+## For loops to set up the priors
+# There are 718 unique justice term combos
 just.term.n <- length(unique.jt)
+#Set up a vector of zeros for the mean and sd of thetas, to capture terms
 theta_mu <- numeric(just.term.n)
 theta_sd <- rep.int(.1, just.term.n)
 theta_past <- numeric(just.term.n)
