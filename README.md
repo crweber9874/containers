@@ -4,6 +4,7 @@
 ## University of Arizona
 
 Thie repository contains the code and data for the paper "Improving Scientific Collaboration and Reproducibility through Containerization" presented at the Annual Meeting for Political Methdology, Stanford University, July 11-13. 
+![Image of Containers](https://www.twilio.com/blog/wp-content/uploads/2018/09/building-immutable-containers.png)
 
 There are three substantive files in this repository:
 
