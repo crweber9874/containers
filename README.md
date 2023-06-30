@@ -5,18 +5,8 @@
 
 Thie repository contains the code and data for the paper "Improving Scientific Collaboration and Reproducibility through Containerization" presented at the Annual Meeting for Political Methdology, Stanford University, July 11-13. 
 
-This is a paragraph of text in Markdown.
 
-<div style="background-color: #f1f1f1; padding: 10px;">
-    <p>This is a paragraph of text inside a <code>&lt;div&gt;</code> element with some custom styling.</p>
-    <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-    </ul>
-</div>
-
-You can also use other HTML elements like <a href="https://www.example.com">links</a>, <strong>bold text</strong>, <em>italicized text</em>, and more.
+ <a href="https://www.example.com">links</a>, <strong>bold text</strong>, <em>italicized text</em>, and more.
 
 There are three substantive files in this repository:
 
