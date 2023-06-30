@@ -6,7 +6,7 @@
 Thie repository contains the code and data for the paper "Improving Scientific Collaboration and Reproducibility through Containerization" presented at the Annual Meeting for Political Methdology, Stanford University, July 11-13. 
 
 
- <a href="https://www.example.com">links</a>, <strong>bold text</strong>, <em>italicized text</em>, and more.
+ <a href="https://github.com/crweber9874/containers_ps/blob/main/rocker-r/buildRstudio.md">links</a>, <strong>bold text</strong>, <em>italicized text</em>, and more.
 
 There are three substantive files in this repository:
 
