@@ -1,7 +1,5 @@
 FROM rocker/rstudio:latest
-
 #FROM rocker/rstudio-stable:3.3.1
-# A message 
 RUN apt-get clean all && \
     apt-get update && \
     apt-get upgrade -y && \
@@ -21,7 +19,6 @@ RUN apt-get clean all && \
     apt-get purge && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
  
-
-RUN  R -q -e 'install.packages(c("lavaan",  "rstan", "brms", "tidyverse", "ggplot2", "modelr", "tidybayes", "dplyr", "cowplot", "simplecolors"))'
+RUN  R -q -e 'install.packages(c("brms", "modelr", "tidybayes",  "cowplot", "simplecolors"))'
 
 EXPOSE 8787

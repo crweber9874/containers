@@ -4,15 +4,11 @@ This example builds a container image and launches that image. The image, is con
 
 Docker Hub is one location that hosts a lot of images. The "Rockerverse" group releases useful rstudio and tidyverse builds. The code below pulls the image and builds the container. The -v tag binds everything in my local workspace to the container. I have to specify the platform component, as I'm using a Macbook Pro. -e denotes what users will need to enter as a username and password. The image as stored in docker hub is rocker/tidyverse. 
 
-Not all containers allow you to see the underlying code. So, I tend to rely on verified images and those with github repositories. In any case, here's the code to build a container with all the tidyverse dependencies and functions, in an rstudio environment. I bind a directory including all the files to run the analysis for Chapter 6 of my book,
-
+Not all containers allow you to see the underlying code. So, I tend to rely on verified images and those with github repositories. I bind a directory including several cross sections from the American National Election Studies. 
 ``` 
-docker run  -v $(pwd):/home/rstudio/workspace -p 8787:8787 --platform linux/x86_64  -e USER=a -e PASSWORD=a rocker/tidyverse 
+docker run  -v $(pwd):/home/rstudio/workspace -p 8787:8787 --platform linux/x86_64  -e USER=user -e PASSWORD=password rocker/tidyverse 
 docker run 
 ```
-
-docker run  -v $(pwd):/home/rstudio/workspace -p 80:8787 --platform linux/x86_64  -e USER=a -e PASSWORD=a rocker/tidyverse 
-
 
 accesses the docker engine. 
 
@@ -57,7 +53,7 @@ RUN apt-get clean all && \
     apt-get purge && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
     
-RUN  R -q -e 'install.packages(c("lavaan",  "rstan"))'
+RUN  R -q -e 'install.packages(c("lavaan",  "rstan", "brms))'
 
 EXPOSE 8787
 ```

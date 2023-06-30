@@ -1,5 +1,5 @@
 # Use an existing R base image
-FROM r-base
+FROM r-base:latest
 
 # Install additional packages, if needed
 RUN apt-get clean all && \
@@ -21,14 +21,14 @@ RUN apt-get clean all && \
     apt-get purge && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
  
-RUN  R -q -e 'install.packages(c("lavaan",  "rstan", "brms", "tidyverse", "ggplot2", "modelr", "tidybayes", "dplyr", "cowplot", "simplecolors"))'
-
+RUN R -e "install.packages('tidyverse', repos='https://cran.rstudio.com/')"
 
 # Set the working directory
 WORKDIR /app
 
 # Copy your R scripts or files to the container
-# COPY . /app
+COPY "syntheticRegression.r" /app
 
 # Run your R script or command
-# CMD ["Rscript", "your_script.R"]
+CMD ["Rscript", "syntheticRegression.r"]
+

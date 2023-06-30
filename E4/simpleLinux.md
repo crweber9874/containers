@@ -1,11 +1,9 @@
 # Build a Simple Linux Container
 
-This brief tutorial briefly explains how to launch a linux container, a much smaller version is the alpine image. The container then runs linux commands, installs curl, git, python, R. Python and R kernels are available in the container.
+This brief tutorial briefly explains how to launch a linux container, a much smaller version is the alpine image. The container then runs linux commands, installs curl, git, python, R. Python and R are available in the container.
 
 ```
 FROM ubuntu:latest
-
-MAINTAINER Chris Weber <chrisweber@arizona.edu>
 
 RUN apt-get update \
     && apt-get install -y \
@@ -75,4 +73,3 @@ Rscript -e 'write.csv(2+2, file="output.csv")'
 docker cp mylinux:/output.csv .
 ```
 
-# Set Environmental Variables

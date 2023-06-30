@@ -1,9 +1,3 @@
-##Load dependencies, packages, data, etc ##
-# More transformations and data recodes.....
-rm(list = ls())
-options(repr.plot.width=15, repr.plot.height=15)
-# Test install 
-#install.packages("brms")
 library(brms)
 #library(tidyverse)
 library(ggplot2)
@@ -14,6 +8,7 @@ library(cowplot)
 library(simplecolors)
 setwd("/home/a/workspace")
 load("pooled.auth.rda")
+
 ##### persistent ggtheme
 ggtheme = theme(
   plot.title=element_text(face="bold",hjust=-.08,vjust=0,colour="#3C3C3C",size=12),
@@ -26,10 +21,9 @@ ggtheme = theme(
 ####
 data$authoritarianism_2 = data$authoritarianism^2
 ### I create smaller, more tractable versions of the data rather than operating on the full data frame, data.
-tmp_dat = data[,c("vote", "authoritarianism", 
-                 "female", "age", "college", "income",
-                 "jewish", "catholic", "other", "year")] %>% na.omit() %>% 
+tmp_dat = data[,c("vote", "authoritarianism", "year")] %>% na.omit() %>% 
                  mutate(authoritarianism_2 = authoritarianism*authoritarianism)  
+
 fit1 <- brm(vote~ female + age + college + income + jewish + 
                  catholic + other + authoritarianism + authoritarianism_2 + 
                  (1+authoritarianism + authoritarianism_2|year), 
