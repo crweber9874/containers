@@ -69,7 +69,7 @@ The Dockerfile should always be called Dockerfile. The "." at the end of the bui
 Then we can run the container.
 
 ```
-docker run  -v $(pwd)/data:/home/rstudio/workspace -p 8787:8787 --platform linux/amd64      -e USER=a -e PASSWORD=a rstudio:latest
+docker run  -v $(pwd):/home/rstudio/workspace -p 8787:8787 --platform linux/amd64      -e USER=a -e PASSWORD=a rstudio:latest
 
 ```
 The container can be stopped with the following command:
@@ -80,7 +80,6 @@ docker stop <name>
 ```
 
 The container can be started at any point, without needing to rebuild. It effectively mirrors the identical environment across users.
-
 
 
 Navigate to the browser, and enter the following url:
