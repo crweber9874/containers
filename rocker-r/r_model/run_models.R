@@ -9,16 +9,7 @@ library(simplecolors)
 setwd("/home/a/workspace/r_model")
 load("pooled.auth.rda")
 
-##### persistent ggtheme
-ggtheme <- theme(
-  plot.title = element_text(face = "bold", hjust = -.08, vjust = 0, colour = "#3C3C3C", size = 12),
-  axis.text.x = element_text(size = 9, colour = "#535353", face = "bold"),
-  axis.text.y = element_text(size = 9, colour = "#535353", face = "bold"),
-  axis.title.y = element_text(size = 11, colour = "#535353", face = "bold", vjust = 1.5),
-  axis.ticks = element_blank(),
-  panel.grid.major = element_line(colour = "#D0D0D0", size = .25),
-  panel.background = element_rect(fill = "white")
-)
+
 ####
 data$authoritarianism_2 <- data$authoritarianism^2
 ### I create smaller, more tractable versions of the data rather than operating on the full data frame, data.
@@ -62,7 +53,6 @@ plot <- m0 %>%
   ggtitle("Authoritarianism and Presidential Vote. Linear Model") +
   scale_y_continuous("Probability of Republican Vote", limits = c(0, 1)) +
   scale_x_continuous("Authoritarianism") +
-  ggtheme +
   theme(legend.title = element_blank()) +
   theme(legend.position = "none") %>%
   suppressWarnings()
