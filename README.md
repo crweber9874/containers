@@ -5,6 +5,19 @@
 
 Thie repository contains the code and data for the paper "Improving Scientific Collaboration and Reproducibility through Containerization" presented at the Annual Meeting for Political Methdology, Stanford University, July 11-13. 
 
+This is a paragraph of text in Markdown.
+
+<div style="background-color: #f1f1f1; padding: 10px;">
+    <p>This is a paragraph of text inside a <code>&lt;div&gt;</code> element with some custom styling.</p>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+</div>
+
+You can also use other HTML elements like <a href="https://www.example.com">links</a>, <strong>bold text</strong>, <em>italicized text</em>, and more.
+
 There are three substantive files in this repository:
 
 1) *simpleLinux* explains how to launch a linux container. The container then runs linux commands, installs curl, git, python, R. Python and R kernels are available in the container. This is a useful tutorial to better understand how containers function, and how to launch a very simple container. Within this application, we also show how to move data between a container and a local machine. This is useful, for example, if you want to run a containerized R script, and then move the output to the local machine. However, the analysis is running in an isolated environment. We demonstrate this by running a simple R script that writes a csv file to the local machine. One might easily build a container image that includes the tidyverse environment, and then execute commands in the container. The output could then be moved to the local machine. This would undoubtedly improve reproducibility and also collaboration. A researcher's full "computational environment" is captured, and complex calculations can be run in an isolated environment. Within the simpleLinux folder, there is an **R** example, where we run an R script in a container and then save container files to the local machine.
