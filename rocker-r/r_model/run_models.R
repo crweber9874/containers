@@ -56,3 +56,19 @@ plot <- m0 %>%
   theme(legend.title = element_blank()) +
   theme(legend.position = "none") %>%
   suppressWarnings()
+
+
+plot 
+# Step 1: Call the pdf command to start the plot
+pdf(file = "plot.pdf",   # The directory you want to save the file in
+    width = 4, # The width of the plot in inches
+    height = 4) # The height of the plot in inches
+
+# Step 2: Create the plot with R code
+plot(x = 1:10, 
+     y = 1:10)
+abline(v = 0) # Additional low-level plotting commands
+text(x = 0, y = 1, labels = "Random text")
+
+# Step 3: Run dev.off() to create the file!
+dev.off()

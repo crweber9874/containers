@@ -73,3 +73,4 @@ Rscript -e 'write.csv(2+2, file="output.csv")'
 docker cp mylinux:/output.csv .
 ```
 
+docker cp rstudio:/home/a/workspace/r_model/plot.pdf
