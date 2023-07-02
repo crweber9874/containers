@@ -65,9 +65,6 @@ This command creates a file called hello.txt and writes "hello world" to it. The
 
 Or, use the R installation.
 
-```
-Rscript -e 'write.csv(2+2, file="output.csv")'
-``` 
 
 ```
 docker cp mylinux:/output.csv .
