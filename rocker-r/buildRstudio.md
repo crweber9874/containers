@@ -5,6 +5,7 @@ This example builds a container image and launches that image. The image, is con
 Docker Hub is one location that hosts a lot of images. The "Rockerverse" group releases useful rstudio and tidyverse builds. The code below pulls the image and builds the container. The -v tag binds everything in my local workspace to the container. I have to specify the platform component, as I'm using a Macbook Pro. -e denotes what users will need to enter as a username and password. The image as stored in docker hub is rocker/tidyverse. 
 
 Not all containers allow you to see the underlying code. So, I tend to rely on verified images and those with github repositories. I bind a directory including several cross sections from the American National Election Studies. 
+
 ``` 
 docker run  -v $(pwd):/home/rstudio/workspace -p 8787:8787 --platform linux/x86_64  -e USER=user -e PASSWORD=password rocker/tidyverse 
 docker run 
