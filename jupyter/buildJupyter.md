@@ -6,6 +6,9 @@ docker run -it --rm -p 8888:8888 -v "${PWD}/data":/home/jovyan/work --platform l
 
 ## Dockerfile 
 
+This is from the github page for the jupyter project. 
+
+
 ```
 
 # Copyright (c) Jupyter Development Team.
